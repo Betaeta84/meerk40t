@@ -83,6 +83,8 @@ class BalorConfiguration(MWindow):
     @signal_listener("flip_x")
     @signal_listener("flip_y")
     def on_viewport_update(self, origin, *args):
+        self.context.origin_x = 1.0 if self.context.flip_x else 0.0,
+        self.context.origin_y = 1.0 if self.context.flip_y else 0.0,
         self.context("viewport_update\n")
         self.context.signal("bedsize", False)
 
