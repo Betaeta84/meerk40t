@@ -907,6 +907,20 @@ class LaserRender:
         self.validate_text_nodes(nodecopy, variable_translation)
 
         for item in _nodes:
+            bbp = item.paint_bounds
+            wp = bbp[2] - bbp[0]
+            hp = bbp[3] - bbp[1]
+            bbr = item.bounds
+            wr = bbr[2] - bbr[0]
+            hr = bbr[3] - bbr[1]
+            strangex = bool(wp >= 3 * wr or wr >= 3 * wp)
+            strangey = bool(hp >= 3 * hr or hr >= 3 * hp)
+            if strangex or strangey:
+                print(f"That's fishy, dimensions for paint bounds and regular bounds differ drastically")
+                print(f"Element: {item.type} - {item.id} - {item.label}")
+                print(f"Painted Bounds: width={wp:.1f} - height={hp:.1f} - TL= ({bbp[0]:.1f}, {bbp[1]:.1f}) - BR= ({bbp[2]:.1f}, {bbp[3]:.1f})")
+                print(f"Normal Bounds : width={wr:.1f} - height={hr:.1f} - TL= ({bbr[0]:.1f}, {bbr[1]:.1f}) - BR= ({bbr[2]:.1f}, {bbr[3]:.1f})")
+
             bb = item.paint_bounds
             if bb is None:
                 # Fall back to bounds
