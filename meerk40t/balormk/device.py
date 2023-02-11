@@ -938,6 +938,48 @@ class BalorDevice(Service, ViewPort):
                 channel(_("Pulse laser failed: Busy"))
             return
 
+        pattern = re.compile(r'([^\n:]+?):\s+(.+)')
+        def regex_extract(input):
+            result = {}
+            groups = pattern.findall(input)
+            for group in groups:
+                result[group[0]] = group[1]
+            return result
+        @self.console_command(
+            "driver_install",
+            help=_("install driver"),
+        )
+        def driver_install(command, channel, _, **kwgs):
+            import subprocess
+            vid = "9588"
+            pid = "9899"
+            list_process = r'pnputil.exe /enum-devices /deviceid USB\VID_{0}&PID_{1}'.format(vid, pid)
+            p = subprocess.Popen(list_process, shell=False, stdout=subprocess.PIPE, universal_newlines=True)
+            output = p.stdout.read()
+            result = regex_extract(output)
+            if result == {}:
+                channel("Could not find laser with the VID/PID: {0}/{1}".format(vid, pid))
+                return
+            channel(str(result))
+
+            prev_driver = result['Driver Name']
+            process = 'pnputil.exe /delete-driver {0} /force'.format(prev_driver)
+            p = subprocess.Popen(process, shell=False, stdout=subprocess.PIPE, universal_newlines=True)
+            output = p.stdout.read()
+            channel(output)
+
+            requested_driver = kwgs['args'][0]
+            if requested_driver == "meerk40t":
+                process = 'pnputil.exe /add-driver {0} /install'.format("libusbk.inf")
+                p = subprocess.Popen(process, shell=False, stdout=subprocess.PIPE, universal_newlines=True)
+                output = p.stdout.read()
+                channel(output)
+            elif requested_driver == "ezcad":
+                process = 'pnputil.exe /add-driver {0} /install'.format("lmcv4.inf")
+                p = subprocess.Popen(process, shell=False, stdout=subprocess.PIPE, universal_newlines=True)
+                output = p.stdout.read()
+                channel(output)
+
         @self.console_command(
             "usb_connect",
             help=_("connect usb"),
