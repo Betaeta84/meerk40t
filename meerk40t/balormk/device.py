@@ -951,8 +951,12 @@ class BalorDevice(Service, ViewPort):
         )
         def driver_install(command, channel, _, **kwgs):
             import subprocess
+            import ctypes
             vid = "9588"
             pid = "9899"
+
+            # Discover existing drivers assigned to specified VID/PID
+            # This doesn't require elevated privileges
             list_process = r'pnputil.exe /enum-devices /deviceid USB\VID_{0}&PID_{1}'.format(vid, pid)
             p = subprocess.Popen(list_process, shell=False, stdout=subprocess.PIPE, universal_newlines=True)
             output = p.stdout.read()
@@ -962,23 +966,25 @@ class BalorDevice(Service, ViewPort):
                 return
             channel(str(result))
 
+            # Couldn't find existing device. Probably in future we can change this
+            # so that it just doesn't do the delete when the previous device doesn't exist
+            if 'args' not in kwgs: return
+
             prev_driver = result['Driver Name']
-            process = 'pnputil.exe /delete-driver {0} /force'.format(prev_driver)
-            p = subprocess.Popen(process, shell=False, stdout=subprocess.PIPE, universal_newlines=True)
-            output = p.stdout.read()
-            channel(output)
+
+            # process = 'pnputil.exe /delete-driver {0} /force'.format(prev_driver)
+            # p = subprocess.Popen(process, shell=False, stdout=subprocess.PIPE, universal_newlines=True)
+            # output = p.stdout.read()
+            # channel(output)
+
+            ctypes.windll.shell32.ShellExecuteW(None, "runas", "pnputil.exe", '/delete-driver {0} /force'.format(prev_driver), None, 1)
 
             requested_driver = kwgs['args'][0]
             if requested_driver == "meerk40t":
-                process = 'pnputil.exe /add-driver {0} /install'.format("libusbk.inf")
-                p = subprocess.Popen(process, shell=False, stdout=subprocess.PIPE, universal_newlines=True)
-                output = p.stdout.read()
-                channel(output)
+                args = '/add-driver {0} /install'.format(r"C:\Users\jacob\meerk40t-libusbK\MeerK40t_Balor.inf")
             elif requested_driver == "ezcad":
-                process = 'pnputil.exe /add-driver {0} /install'.format("lmcv4.inf")
-                p = subprocess.Popen(process, shell=False, stdout=subprocess.PIPE, universal_newlines=True)
-                output = p.stdout.read()
-                channel(output)
+                args = '/add-driver {0} /install'.format(r"C:\Users\jacob\meerk40t-lmcv2u\Lmcv2u.inf")
+            ctypes.windll.shell32.ShellExecuteW(None, "runas", "pnputil.exe", args, None, 1)
 
         @self.console_command(
             "usb_connect",
