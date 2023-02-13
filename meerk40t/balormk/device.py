@@ -978,7 +978,7 @@ class BalorDevice(Service, ViewPort):
 
             # Massage source directory where the new drivers should be found
             if source_dir is None:
-                source_dir = '%USERPROFILE%\\Downloads\\balor-drivers\\'
+                source_dir = os.path.expanduser('~')+'\\Downloads\\balor-drivers\\'
             if not source_dir.endswith('\\'):
                 source_dir += '\\'
 
