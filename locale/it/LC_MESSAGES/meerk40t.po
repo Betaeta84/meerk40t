@@ -4389,7 +4389,7 @@ msgstr "Distanza di Jog:"
 
 #: meerk40t/gui/navigationpanels.py:2105
 msgid "Opens Navigation Window"
-msgstr "Navigazione"
+msgstr "Pannello di navigazione"
 
 #: meerk40t/gui/notes.py:18 meerk40t/gui/notes.py:120 meerk40t/gui/notes.py:129
 msgid "Notes"
@@ -5082,7 +5082,7 @@ msgstr "Simulazione"
 
 #: meerk40t/gui/simulation.py:2152
 msgid "Simulate the current laser job"
-msgstr "Simula il lavoro"
+msgstr "Simula lavoro"
 
 #: meerk40t/gui/snapoptions.py:17
 msgid "Snap-Options"
@@ -5775,7 +5775,7 @@ msgstr "Disegna"
 
 #: meerk40t/gui/wxmmain.py:728
 msgid "Add a free-drawing element"
-msgstr "Aggiungi un elemento di disegno libero"
+msgstr "Strumento matita"
 
 #: meerk40t/gui/wxmmain.py:739
 msgid "Ellipse"
@@ -5783,7 +5783,7 @@ msgstr "Ellisse"
 
 #: meerk40t/gui/wxmmain.py:741
 msgid "Add an ellipse element"
-msgstr "Aggiungi un elemento ellisse"
+msgstr "Strumento ellisse"
 
 #: meerk40t/gui/wxmmain.py:752
 msgid "Circle"
@@ -5791,7 +5791,7 @@ msgstr "Cerchio"
 
 #: meerk40t/gui/wxmmain.py:754
 msgid "Add a circle element"
-msgstr "Aggiungi un elemento cerchio"
+msgstr "Strumento cerchio"
 
 #: meerk40t/gui/wxmmain.py:765
 msgid "Polygon"
@@ -5804,7 +5804,7 @@ msgid ""
 "Double click: complete\n"
 "Right click: cancel"
 msgstr ""
-"Aggiungi un elemento poligono\n"
+"Strumento poligono\n"
 "Clic sinistro: punto/linea\n"
 "Doppio clic: completa\n"
 "Clic destro: fine"
@@ -5820,7 +5820,7 @@ msgid ""
 "Double click: complete\n"
 "Right click: cancel"
 msgstr ""
-"Aggiungi un elemento polilinea\n"
+"Strumento polilinea\n"
 "Clic sinistro: punto/linea\n"
 "Doppio clic: completa\n"
 "Clic destro: fine"
@@ -5830,7 +5830,7 @@ msgstr "Rettangolo"
 
 #: meerk40t/gui/wxmmain.py:797
 msgid "Add a rectangular element"
-msgstr "Aggiungi un elemento rettangolare"
+msgstr "Strumento rettangolo"
 
 #: meerk40t/gui/wxmmain.py:808
 msgid "Point"
@@ -5838,7 +5838,7 @@ msgstr "Punto"
 
 #: meerk40t/gui/wxmmain.py:810
 msgid "Add point to the scene"
-msgstr "Aggiungi un punto alla scena"
+msgstr "Strumento punto"
 
 #: meerk40t/gui/wxmmain.py:821 meerk40t/lihuiyu/gui/lhyaccelgui.py:190
 msgid "Vector"
@@ -5852,7 +5852,7 @@ msgid ""
 "Double click: complete\n"
 "Right click: end"
 msgstr ""
-"Aggiungi una forma\n"
+"Strumento forma\n"
 "Clic sinistro: punto/linea\n"
 "Clic e tieni premuto: curva\n"
 "Doppio clic: completa\n"
@@ -5860,7 +5860,7 @@ msgstr ""
 
 #: meerk40t/gui/wxmmain.py:838
 msgid "Add a text element"
-msgstr "Aggiungi un elemento di testo"
+msgstr "Strumento testo"
 
 #: meerk40t/gui/wxmmain.py:851 meerk40t/gui/wxmmain.py:2509
 msgid "Cut selected elements"
@@ -5884,7 +5884,7 @@ msgstr "Annulla"
 
 #: meerk40t/gui/wxmmain.py:923
 msgid "Undo last operation"
-msgstr "Annulla l'ultima operazione"
+msgstr "Annullare l'ultima operazione"
 
 #: meerk40t/gui/wxmmain.py:933
 msgid "Redo"
@@ -5892,7 +5892,7 @@ msgstr "Ripeti"
 
 #: meerk40t/gui/wxmmain.py:935
 msgid "Redo last operation"
-msgstr "Ripeti l'ultima operazione"
+msgstr "Riapplica l'ultima operazione annullata"
 
 #: meerk40t/gui/wxmmain.py:946
 msgid "Measure"
@@ -5987,7 +5987,7 @@ msgstr "Raggruppa"
 
 #: meerk40t/gui/wxmmain.py:1141
 msgid "Group elements together"
-msgstr "Raggruppa insieme gli elementi"
+msgstr "Raggruppa elementi"
 
 #: meerk40t/gui/wxmmain.py:1184
 msgid "Ungroup"
@@ -5995,7 +5995,7 @@ msgstr "Separa"
 
 #: meerk40t/core/elements/element_treeops.py:125 meerk40t/gui/wxmmain.py:1186
 msgid "Ungroup elements"
-msgstr "Separa gli elementi"
+msgstr "Dividi elementi"
 
 #: meerk40t/gui/wxmmain.py:1198
 msgid "Align selected elements at the leftmost position (right click: of the bed)"
@@ -6862,7 +6862,7 @@ msgstr "Testo Vettoriale"
 
 #: meerk40t/gui/wxmscene.py:199
 msgid "Add a vector text element"
-msgstr "Aggiungi un elemento di testo vettoriale"
+msgstr "Strumento testo vettoriale"
 
 #: meerk40t/gui/wxmscene.py:210
 msgid "Ref. Obj."
@@ -9430,7 +9430,7 @@ msgstr "Cerniera"
 
 #: meerk40t/tools/livinghinges.py:1028
 msgid "Fill area with a living hinge pattern"
-msgstr "Riempi l'area con un modello di cerniera vivente"
+msgstr "Strumento pattern di piegatura"
 
 #: meerk40t/balormk/gui/balorconfig.py:21
 msgid "Balor-Configuration"
@@ -10932,7 +10932,7 @@ msgid "Run the given blob on the current device"
 msgstr "Esegui il blob dato sul dispositivo corrente"
 #: meerk40t/core/elements/element_treeops.py:1208
 msgid "Convert to Path"
-msgstr "Converti in Percorso"
+msgstr "Converti in curve"
 
 #: meerk40t/core/elements/element_treeops.py:1224
 #: meerk40t/core/elements/element_treeops.py:1229
@@ -14339,7 +14339,7 @@ msgstr "Perimetro"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:154
 msgid "Insert point before"
-msgstr "Inserisci un punto prima"
+msgstr "Aggiungi un nodo prima"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:156
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:408
@@ -14348,7 +14348,7 @@ msgstr "Inserisci"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:163
 msgid "Append point at end"
-msgstr "Aggiungi un punto alla fine"
+msgstr "Aggiungi un nodo alla fine"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:165
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:409
@@ -14357,11 +14357,11 @@ msgstr "Aggiungi"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:172
 msgid "Delete point"
-msgstr "Elimina il punto"
+msgstr "Elimina nodo"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:181
 msgid "Make segment a line"
-msgstr "Rendi il segmento una linea"
+msgstr "Converti in linea"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:183
 msgid "> Line"
@@ -14369,7 +14369,7 @@ msgstr "> Linea"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:190
 msgid "Make segment a curve"
-msgstr "Rendi il segmento una curva"
+msgstr "Converti in curva"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:192
 msgid "> Curve"
@@ -14377,7 +14377,7 @@ msgstr "> Curva"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:199
 msgid "Make segment symmetrical"
-msgstr "Rendi il segmento simmetrico"
+msgstr "Nodo simmetrico"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:201
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:407
@@ -14386,7 +14386,7 @@ msgstr "Simmetrico"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:208
 msgid "Join two segments"
-msgstr "Unisci due segmenti"
+msgstr "Unisci nodi"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:217
 msgid "Break segment apart"
@@ -14415,7 +14415,7 @@ msgstr "Molto liscio"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:244
 msgid "Toggle closed status"
-msgstr "Cambia lo stato chiuso"
+msgstr "Chiudi curva"
 
 #: meerk40t/gui/toolwidgets/toolnodeedit.py:253
 msgid "Convert polyline to a path element"
@@ -17785,6 +17785,10 @@ msgstr "Cancella oggetto selezionato"
 
 msgid "Measure distance / perimeter / area\nLeft click: point/line\nDouble click: complete\nRight click: cancel"
 msgstr ""
+"Strumento di misura distanza/perimetro/area\n"
+"Clic sinistro: punto/linea\n"
+"Doppio clic: completa\n"
+"Clic destro: fine"
 
 msgid "control various panes for main window"
 msgstr ""
